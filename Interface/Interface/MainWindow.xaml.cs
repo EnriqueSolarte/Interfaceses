@@ -25,7 +25,10 @@ namespace Interface
             InitializeComponent();
         }
 
-        
+
+
+
+        #region Behaibor apperance
         private void sizeChanged(object sender, SizeChangedEventArgs e)
         {
             double remainingSpace = listViewOperations.ActualWidth;
@@ -38,5 +41,7 @@ namespace Interface
                 
             }
         }
+
+        #endregion
     }
 }
