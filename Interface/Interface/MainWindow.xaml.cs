@@ -24,5 +24,19 @@ namespace Interface
         {
             InitializeComponent();
         }
+
+        
+        private void sizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            double remainingSpace = listViewOperations.ActualWidth;
+
+            if (remainingSpace > 0)
+            {
+                (listViewOperations.View as GridView).Columns[0].Width = 50;
+                (listViewOperations.View as GridView).Columns[1].Width = 200;
+                (listViewOperations.View as GridView).Columns[2].Width = Math.Ceiling(remainingSpace-50-200);
+                
+            }
+        }
     }
 }

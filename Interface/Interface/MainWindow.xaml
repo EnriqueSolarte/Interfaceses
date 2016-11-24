@@ -5,16 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Interface"
         mc:Ignorable="d"
-        Title="CAM TURNING" Height="600" Width="800">
+        Title="CAM TURNING" Height="600" Width="800" SizeChanged="sizeChanged">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="172"/>
         </Grid.ColumnDefinitions>
-        <ListView x:Name="listView" Margin="10">
+        <ListView x:Name="listViewOperations" Margin="10">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn/>
+                    
+                    <GridViewColumn Width="50">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding TypeImagineOperation}" Width="25" Height="25"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Operation Type" Width="200" DisplayMemberBinding="{Binding TypeOperation}"/>
+                    <GridViewColumn Header="Parameters" Width="340" DisplayMemberBinding="{Binding Parameter}"/>
+
                 </GridView>
             </ListView.View>
         </ListView>
