@@ -13,16 +13,32 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Interface.Pages
+namespace Interface
 {
     /// <summary>
     /// Interaction logic for Main.xaml
     /// </summary>
-    public partial class Main : Page
+    public partial class Main : UserControl
     {
         public Main()
         {
             InitializeComponent();
         }
+
+        #region Rezing ListView
+        private void ChangeSize(object sender, SizeChangedEventArgs e)
+        {         
+            double remainingSpace = this.listViewOperations.ActualWidth;
+
+            if (remainingSpace > 0)
+            {
+                (this.listViewOperations.View as GridView).Columns[0].Width = 50;
+                (this.listViewOperations.View as GridView).Columns[1].Width = 200;
+                (this.listViewOperations.View as GridView).Columns[2].Width = Math.Ceiling(remainingSpace - 50 - 200);
+
+            }
+        }
+        #endregion
     }
 }
+
