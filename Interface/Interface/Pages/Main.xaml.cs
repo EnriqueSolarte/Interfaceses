@@ -13,16 +13,18 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Interface
+namespace Interface.Pages
 {
     /// <summary>
     /// Interaction logic for Main.xaml
     /// </summary>
     public partial class Main : UserControl
     {
+      
         public Main()
         {
             InitializeComponent();
+            this.labelTime.Content = DateTime.Now.ToString();
         }
 
         #region Rezing ListView
@@ -39,6 +41,11 @@ namespace Interface
             }
         }
         #endregion
+
+        private void buttonProfile_Click(object sender, RoutedEventArgs e)
+        {
+            Switcher.Switch(new Pages.Profile(this));
+        }
     }
 }
 

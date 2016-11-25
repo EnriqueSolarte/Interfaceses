@@ -58,6 +58,9 @@
     <Compile Include="Pages\Main.xaml.cs">
       <DependentUpon>Main.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Profile.xaml.cs">
+      <DependentUpon>Profile.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Switcher.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -72,6 +75,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Pages\Main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Profile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -108,6 +115,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Turning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ProfileDefinition.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ProfileDefinition2.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

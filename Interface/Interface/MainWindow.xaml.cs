@@ -24,17 +24,14 @@ namespace Interface
         {
             InitializeComponent();
             Switcher.pageSwitcher = this;
-            Switcher.Switch(new Main());
+            Switcher.Switch(new Pages.Main());
         }
 
-
-
-        #region Switcher
+        #region Switcher Tools
         public void Navigate(UserControl nextPage)
         {
             this.Content = nextPage;
         }
-
         public void Navigate(UserControl nextPage, object state)
         {
             this.Content = nextPage;
@@ -48,6 +45,5 @@ namespace Interface
         }
         #endregion
 
-      
     }
 }
