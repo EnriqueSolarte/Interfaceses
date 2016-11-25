@@ -31,5 +31,10 @@ namespace Interface.Pages
         {
             Switcher.Switch(Main);
         }
+
+        private void buttonCancel_Click(object sender, RoutedEventArgs e)
+        {
+            Switcher.Switch(Main);
+        }
     }
 }

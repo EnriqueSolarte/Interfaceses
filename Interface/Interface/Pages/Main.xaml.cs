@@ -27,9 +27,14 @@ namespace Interface.Pages
             this.labelTime.Content = DateTime.Now.ToString();
         }
 
+        private void buttonProfile_Click(object sender, RoutedEventArgs e)
+        {
+            Switcher.Switch(new Pages.Profile(this));
+        }
+
         #region Rezing ListView
         private void ChangeSize(object sender, SizeChangedEventArgs e)
-        {         
+        {
             double remainingSpace = this.listViewOperations.ActualWidth;
 
             if (remainingSpace > 0)
@@ -41,11 +46,6 @@ namespace Interface.Pages
             }
         }
         #endregion
-
-        private void buttonProfile_Click(object sender, RoutedEventArgs e)
-        {
-            Switcher.Switch(new Pages.Profile(this));
-        }
     }
 }
 

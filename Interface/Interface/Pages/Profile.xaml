@@ -15,6 +15,7 @@
         <Label x:Name="label" Content="Profile Defintion" Margin="180,25,178,0" FontSize="24" Height="50" VerticalAlignment="Top"/>
         <Image x:Name="image" Source="/Images/ProfileDefinition.PNG" Height="150" Margin="40,90,48,0" VerticalAlignment="Top"/>
         <Image x:Name="image_Copy" Source="/Interface;component/Images/ProfileDefinition2.PNG" Margin="40,240,30,45"/>
+        <Button x:Name="buttonCancel" Content="Cancel" Grid.Column="1" Margin="0,0,20,45" Click="buttonCancel_Click" Height="20" VerticalAlignment="Bottom"/>
 
     </Grid>
 </UserControl>
