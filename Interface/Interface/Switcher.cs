@@ -15,12 +15,7 @@ namespace Interface
         {
             window.Navigate(newPage);
         }
-
-        public static void Switch(UserControl newPage, Operation newOperation)
-        {
-            window.Navigate(newPage, newOperation);
-
-        }
+       
     }
 
     

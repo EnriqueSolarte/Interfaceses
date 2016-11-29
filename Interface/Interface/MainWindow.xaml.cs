@@ -21,22 +21,14 @@ namespace Interface
         public MainWindow()
         {
             InitializeComponent();
-            Switcher.pageSwitcher = this;
+            Switcher.window = this;
             Switcher.Switch(new Pages.Main());
         }
 
-        #region Switcher Tools
+        #region Switcher Tool
         public void Navigate(UserControl nextPage)
         {
             this.Content = nextPage;
-        }
-        public void Navigate(UserControl nextPage, Operation operation)
-        {
-            this.Content = nextPage;
-            if (nextPage.Name == "pageMain")
-            {
-                MessageBox.Show(operation.typeOperation);
-            }
         }
 
         #endregion
