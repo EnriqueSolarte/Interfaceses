@@ -20,24 +20,27 @@ namespace Interface.Pages
     {
         UserControl Main;
         Operation profileOperation;
+
         public Profile(UserControl main)
-        {
+        { 
             Main = main;
             InitializeComponent();
             profileOperation = new Operation();
         }
 
-        public Profile(UserControl main, Operation operation)
-        {
-            Main = main;
-            profileOperation = operation;
-            InitializeComponent();
-            MessageBox.Show(profileOperation.typeOperation);
-        }
 
         private void buttonAccept_Click(object sender, RoutedEventArgs e)
+        {   
+            profileDefinition(profileOperation);
+            Switcher.Switch(new Main(profileOperation));
+        }
+
+        private void profileDefinition(Operation profileOperation)
         {
-            Switcher.Switch(Main, profileOperation);
+            
+            profileOperation.TypeImagineOperation ="/Images/Profile.png";
+            profileOperation.TypeOperation = "Profile";
+            profileOperation.Parameters = "Z=150 XF=25.25 F125.25 Z2.5 S=12.5 Mx=12.45 TF=125.8";
         }
 
         private void buttonCancel_Click(object sender, RoutedEventArgs e)

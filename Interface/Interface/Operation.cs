@@ -8,6 +8,8 @@ namespace Interface
 {
     public class Operation
     {
-        public string typeOperation { get; set; } 
+        public string TypeImagineOperation { get; set; }
+        public string TypeOperation { get; set; }
+        public string Parameters { get; set; }
     }
 }

@@ -19,24 +19,35 @@ namespace Interface.Pages
     public partial class Main : UserControl
     {
 
-        Operation operation;
+        List<Operation> currentList;
         public Main()
         {
             InitializeComponent();
             this.labelTime.Content = DateTime.Now.ToString();
-        }     
+            this.currentList = new List<Operation>();
+        }
+
+        public Main(Operation op)
+        {
+            InitializeComponent();
+            this.labelTime.Content = DateTime.Now.ToString();
+            this.currentList = new List<Operation>();
+            loadOperation(op);
+        }
+
+        private void loadOperation(Operation op)
+        {
+            this.currentList.Add(op);
+            this.listViewOperations.ItemsSource = null;
+            this.listViewOperations.ItemsSource = currentList;
+        }
 
         private void buttonProfile_Click(object sender, RoutedEventArgs e)
         {
             Switcher.Switch(new Pages.Profile(this));
         }
 
-        private void buttonProfileTest_click(object sender, RoutedEventArgs e)
-        {
-            operation = new Operation();
-            operation.typeOperation = "Profile already generated";
-            Switcher.Switch(new Pages.Profile(this, operation));
-        }
+       
 
         #region Rezing ListView
         private void ChangeSize(object sender, SizeChangedEventArgs e)

@@ -115,13 +115,13 @@
     <Resource Include="Images\Icono.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Turning.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\ProfileDefinition.PNG" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\ProfileDefinition2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Profile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
