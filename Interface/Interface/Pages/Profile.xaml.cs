@@ -20,10 +20,11 @@ namespace Interface.Pages
     {
         UserControl Main;
         Operation profileOperation;
-
-        public Profile(UserControl main)
+        Main mainPage;
+        public Profile(Main main)
         { 
             Main = main;
+            mainPage = main;
             InitializeComponent();
             profileOperation = new Operation();
         }
@@ -32,7 +33,8 @@ namespace Interface.Pages
         private void buttonAccept_Click(object sender, RoutedEventArgs e)
         {   
             profileDefinition(profileOperation);
-            Switcher.Switch(new Main(profileOperation));
+            
+            Switcher.Switch(new Main(profileOperation,mainPage.currentList));
         }
 
         private void profileDefinition(Operation profileOperation)

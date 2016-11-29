@@ -19,7 +19,9 @@ namespace Interface.Pages
     public partial class Main : UserControl
     {
 
-        List<Operation> currentList;
+        public List<Operation> currentList;
+        private Operation profileOperation;
+
         public Main()
         {
             InitializeComponent();
@@ -27,13 +29,16 @@ namespace Interface.Pages
             this.currentList = new List<Operation>();
         }
 
-        public Main(Operation op)
+        public Main(Operation newOperation, List<Operation> savedList)
         {
             InitializeComponent();
             this.labelTime.Content = DateTime.Now.ToString();
             this.currentList = new List<Operation>();
-            loadOperation(op);
+            currentList = savedList;
+            loadOperation(newOperation);
         }
+
+        
 
         private void loadOperation(Operation op)
         {
