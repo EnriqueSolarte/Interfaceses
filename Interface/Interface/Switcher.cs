@@ -9,16 +9,17 @@ namespace Interface
 {
     class Switcher
     {
-        public static MainWindow pageSwitcher;
+        public static MainWindow window;
 
         public static void Switch(UserControl newPage)
         {
-            pageSwitcher.Navigate(newPage);
+            window.Navigate(newPage);
         }
 
-        public static void Switch(UserControl newPage, Operation operation)
+        public static void Switch(UserControl newPage, Operation newOperation)
         {
-            pageSwitcher.Navigate(newPage, operation);
+            window.Navigate(newPage, newOperation);
+
         }
     }
 
