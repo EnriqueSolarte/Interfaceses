@@ -15,21 +15,27 @@ using System.Windows.Shapes;
 
 namespace Interface.Pages
 {
-    /// <summary>
-    /// Interaction logic for Main.xaml
-    /// </summary>
+  
     public partial class Main : UserControl
     {
-      
+
+        Operation operation;
         public Main()
         {
             InitializeComponent();
             this.labelTime.Content = DateTime.Now.ToString();
-        }
+        }     
 
         private void buttonProfile_Click(object sender, RoutedEventArgs e)
         {
             Switcher.Switch(new Pages.Profile(this));
+        }
+
+        private void buttonProfileTest_click(object sender, RoutedEventArgs e)
+        {
+            operation = new Operation();
+            operation.typeOperation = "Profile already generated";
+            Switcher.Switch(new Pages.Profile(this, operation));
         }
 
         #region Rezing ListView
@@ -46,6 +52,8 @@ namespace Interface.Pages
             }
         }
         #endregion
+
+       
     }
 }
 

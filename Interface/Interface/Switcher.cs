@@ -16,9 +16,9 @@ namespace Interface
             pageSwitcher.Navigate(newPage);
         }
 
-        public static void Switch(UserControl newPage, object state)
+        public static void Switch(UserControl newPage, Operation operation)
         {
-            pageSwitcher.Navigate(newPage, state);
+            pageSwitcher.Navigate(newPage, operation);
         }
     }
 

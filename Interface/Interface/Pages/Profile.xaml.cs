@@ -15,21 +15,29 @@ using System.Windows.Shapes;
 
 namespace Interface.Pages
 {
-    /// <summary>
-    /// Interaction logic for Profile.xaml
-    /// </summary>
+   
     public partial class Profile : UserControl
     {
-         UserControl Main;
+        UserControl Main;
+        Operation profileOperation;
         public Profile(UserControl main)
         {
             Main = main;
             InitializeComponent();
+            profileOperation = new Operation();
+        }
+
+        public Profile(UserControl main, Operation operation)
+        {
+            Main = main;
+            profileOperation = operation;
+            InitializeComponent();
+            MessageBox.Show(profileOperation.typeOperation);
         }
 
         private void buttonAccept_Click(object sender, RoutedEventArgs e)
         {
-            Switcher.Switch(Main);
+            Switcher.Switch(Main, profileOperation);
         }
 
         private void buttonCancel_Click(object sender, RoutedEventArgs e)

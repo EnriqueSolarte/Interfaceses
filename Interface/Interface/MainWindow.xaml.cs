@@ -15,9 +15,7 @@ using System.Windows.Shapes;
 
 namespace Interface
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+  
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -32,10 +30,15 @@ namespace Interface
         {
             this.Content = nextPage;
         }
-        public void Navigate(UserControl nextPage, object state)
+        public void Navigate(UserControl nextPage, Operation operation)
         {
-           
+            this.Content = nextPage;
+            if (nextPage.Name == "pageMain")
+            {
+                MessageBox.Show(operation.typeOperation);
+            }
         }
+
         #endregion
 
     }
