@@ -15,12 +15,13 @@ using System.Windows.Shapes;
 
 namespace Interface.Pages
 {
-   
+
     public partial class Profile : UserControl
     {
         UserControl Main;
-        Operation profileOperation;
         Main mainPage;
+        Operation profileOperation;
+
         public Profile(Main main)
         { 
             Main = main;
@@ -32,12 +33,12 @@ namespace Interface.Pages
 
         private void buttonAccept_Click(object sender, RoutedEventArgs e)
         {   
-            profileDefinition(profileOperation);
+            profileDefinition();
             
             Switcher.Switch(new Main(profileOperation,mainPage.currentList));
         }
 
-        private void profileDefinition(Operation profileOperation)
+        private void profileDefinition()
         {
             
             profileOperation.TypeImagineOperation ="/Images/Profile.png";

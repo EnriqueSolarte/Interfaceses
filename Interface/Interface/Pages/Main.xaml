@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Interface.Pages.Main" Name="mainPage"
+﻿<UserControl x:Class="Interface.Pages.Main" 
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -11,7 +11,7 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="172"/>
         </Grid.ColumnDefinitions>
-        <ListView x:Name="listViewOperations" Margin="10">
+        <ListView x:Name="listViewOperations" Margin="10" MouseDoubleClick="doubleCLlick">
             <ListView.View>
                 <GridView>
 
