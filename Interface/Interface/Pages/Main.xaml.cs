@@ -20,7 +20,7 @@ namespace Interface.Pages
     {
 
         public List<Operation> currentList;
-        private Operation profileOperation;
+
 
         public Main()
         {
@@ -40,9 +40,9 @@ namespace Interface.Pages
 
         
 
-        private void loadOperation(Operation op)
+        private void loadOperation(Operation newOperation)
         {
-            this.currentList.Add(op);
+            this.currentList.Add(newOperation);
             this.listViewOperations.ItemsSource = null;
             this.listViewOperations.ItemsSource = currentList;
         }
@@ -67,9 +67,19 @@ namespace Interface.Pages
 
             }
         }
+
+
         #endregion
 
-       
+        private void doubleCLlick(object sender, MouseButtonEventArgs e)
+        {
+            var selectedStockObject = listViewOperations.SelectedItems[0] as Operation;
+            if (selectedStockObject == null)
+            {
+                return;
+            }
+            
+        }
     }
 }
 
