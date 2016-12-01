@@ -32,6 +32,7 @@ namespace Interface.Pages
             {
                 var listProfileOperation = MainPage.listViewOperations.SelectedValue as List<Operation>;
                 profileOperation = listProfileOperation.Last();
+                MainPage.listViewOperations.Items.RemoveAt(profileOperation.index);
             }
             else
             {
@@ -54,12 +55,13 @@ namespace Interface.Pages
             profileOperation.TypeImagineOperation ="/Images/Profile.png";
             profileOperation.TypeOperation = "Profile";
             profileOperation.Parameters = DateTime.Now.ToString("[DD=hh][MM=mm][YY=-hh][MM=mmss]");
+            profileOperation.update = DateTime.Now.ToString();
+
 
             List<Operation> listOperation = new List<Operation>();
-            listOperation.Add(profileOperation);
+            listOperation.Add(profileOperation);            
             MainPage.listViewOperations.Items.Insert(profileOperation.index, listOperation);
-
-            Main = MainPage;
+            
         }
 
         private void buttonCancel_Click(object sender, RoutedEventArgs e)
