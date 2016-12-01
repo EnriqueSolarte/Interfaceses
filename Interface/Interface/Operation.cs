@@ -15,6 +15,7 @@ namespace Interface
 
         public int index { get; set; }
 
+        public string update { get; set; }
 
     }
 }
