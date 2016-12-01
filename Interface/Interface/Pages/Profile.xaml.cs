@@ -19,36 +19,58 @@ namespace Interface.Pages
     public partial class Profile : UserControl
     {
         UserControl Main;
-        Main mainPage;
+        Main MainPage;
         Operation profileOperation;
 
-        public Profile(Main main)
+        public Profile(Main main, int index)
         { 
             Main = main;
-            mainPage = main;
+            MainPage = main;
             InitializeComponent();
             profileOperation = new Operation();
+            if (index <= MainPage.listViewOperations.Items.Count)
+            {
+                var listProfileOperation = MainPage.listViewOperations.SelectedValue as List<Operation>;
+                profileOperation = listProfileOperation.Last();
+            }
+            else
+            {
+                profileOperation.index = MainPage.listViewOperations.Items.Count;
+            }
+            fillingProfileParameters();
+
         }
 
+       
 
         private void buttonAccept_Click(object sender, RoutedEventArgs e)
-        {   
+        {
             profileDefinition();
-            
-            Switcher.Switch(new Main(profileOperation,mainPage.currentList));
+            Switcher.Switch(Main);
         }
 
         private void profileDefinition()
         {
-            
             profileOperation.TypeImagineOperation ="/Images/Profile.png";
             profileOperation.TypeOperation = "Profile";
-            profileOperation.Parameters = "Z=150 XF=25.25 F125.25 Z2.5 S=12.5 Mx=12.45 TF=125.8";
+            profileOperation.Parameters = DateTime.Now.ToString("[DD=hh][MM=mm][YY=-hh][MM=mmss]");
+
+            List<Operation> listOperation = new List<Operation>();
+            listOperation.Add(profileOperation);
+            MainPage.listViewOperations.Items.Insert(profileOperation.index, listOperation);
+
+            Main = MainPage;
         }
 
         private void buttonCancel_Click(object sender, RoutedEventArgs e)
         {
             Switcher.Switch(Main);
+        }
+
+        private void fillingProfileParameters()
+        {
+            this.textBoxParameters.Text = profileOperation.index + profileOperation.Parameters;
+
         }
     }
 }

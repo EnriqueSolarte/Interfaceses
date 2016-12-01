@@ -19,37 +19,17 @@ namespace Interface.Pages
     public partial class Main : UserControl
     {
 
-        public List<Operation> currentList;
-
-
         public Main()
         {
             InitializeComponent();
             this.labelTime.Content = DateTime.Now.ToString();
-            this.currentList = new List<Operation>();
         }
-
-        public Main(Operation newOperation, List<Operation> savedList)
-        {
-            InitializeComponent();
-            this.labelTime.Content = DateTime.Now.ToString();
-            this.currentList = new List<Operation>();
-            currentList = savedList;
-            loadOperation(newOperation);
-        }
-
-        
-
-        private void loadOperation(Operation newOperation)
-        {
-            this.currentList.Add(newOperation);
-            this.listViewOperations.ItemsSource = null;
-            this.listViewOperations.ItemsSource = currentList;
-        }
-
+    
         private void buttonProfile_Click(object sender, RoutedEventArgs e)
         {
-            Switcher.Switch(new Pages.Profile(this));
+            int index = this.listViewOperations.Items.Count+1;
+            Switcher.Switch(new Pages.Profile(this,index));
+
         }
 
        
@@ -73,12 +53,9 @@ namespace Interface.Pages
 
         private void doubleCLlick(object sender, MouseButtonEventArgs e)
         {
-            var selectedStockObject = listViewOperations.SelectedItems[0] as Operation;
-            if (selectedStockObject == null)
-            {
-                return;
-            }
-            
+            int index = this.listViewOperations.SelectedIndex;
+            Switcher.Switch(new Pages.Profile(this, index));
+
         }
     }
 }
