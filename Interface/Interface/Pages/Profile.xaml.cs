@@ -32,7 +32,7 @@ namespace Interface.Pages
             {
                 var listProfileOperation = MainPage.listViewOperations.SelectedValue as List<Operation>;
                 profileOperation = listProfileOperation.Last();
-                MainPage.listViewOperations.Items.RemoveAt(profileOperation.index);
+                
             }
             else
             {
@@ -59,7 +59,11 @@ namespace Interface.Pages
 
 
             List<Operation> listOperation = new List<Operation>();
-            listOperation.Add(profileOperation);            
+            listOperation.Add(profileOperation);
+            if (profileOperation.index != MainPage.listViewOperations.Items.Count)
+            {
+                MainPage.listViewOperations.Items.RemoveAt(profileOperation.index);
+            }
             MainPage.listViewOperations.Items.Insert(profileOperation.index, listOperation);
             
         }
