@@ -6,7 +6,5 @@
         xmlns:local="clr-namespace:Interface"
         mc:Ignorable="d"
         Title="CAM TURNING" Height="600" Width="800" Icon="/Images/Icono.png">
-    <Grid>
-      
-    </Grid>
+    <Grid/>
 </Window>

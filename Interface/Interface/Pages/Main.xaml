@@ -14,7 +14,6 @@
         <ListView x:Name="listViewOperations" Margin="10" MouseDoubleClick="doubleCLlick">
             <ListView.View>
                 <GridView>
-
                     <GridViewColumn Width="50">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
@@ -22,6 +21,7 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
+                    <GridViewColumn Header="Index" Width="200" DisplayMemberBinding="{Binding Index}"/>
                     <GridViewColumn Header="Operation Type" Width="200" DisplayMemberBinding="{Binding TypeOperation}"/>
                     <GridViewColumn Header="Parameters" Width="340" DisplayMemberBinding="{Binding Parameters}"/>
 

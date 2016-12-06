@@ -36,7 +36,7 @@ namespace Interface.Pages
             }
             else
             {
-                profileOperation.index = MainPage.listViewOperations.Items.Count;
+                profileOperation.Index = MainPage.listViewOperations.Items.Count;
             }
             fillingProfileParameters();
 
@@ -55,16 +55,16 @@ namespace Interface.Pages
             profileOperation.TypeImagineOperation ="/Images/Profile.png";
             profileOperation.TypeOperation = "Profile";
             profileOperation.Parameters = DateTime.Now.ToString("[DD=hh][MM=mm][YY=-hh][MM=mmss]");
-            profileOperation.update = DateTime.Now.ToString();
+            profileOperation.upDate = DateTime.Now.ToString();
 
 
             List<Operation> listOperation = new List<Operation>();
             listOperation.Add(profileOperation);
-            if (profileOperation.index != MainPage.listViewOperations.Items.Count)
+            if (profileOperation.Index != MainPage.listViewOperations.Items.Count)
             {
-                MainPage.listViewOperations.Items.RemoveAt(profileOperation.index);
+                MainPage.listViewOperations.Items.RemoveAt(profileOperation.Index);
             }
-            MainPage.listViewOperations.Items.Insert(profileOperation.index, listOperation);
+            MainPage.listViewOperations.Items.Insert(profileOperation.Index, listOperation);
             
         }
 
@@ -75,7 +75,7 @@ namespace Interface.Pages
 
         private void fillingProfileParameters()
         {
-            this.textBoxParameters.Text = profileOperation.index + profileOperation.Parameters;
+            this.textBoxParameters.Text = profileOperation.Index + profileOperation.Parameters;
 
         }
     }

@@ -13,9 +13,9 @@ namespace Interface
         public string TypeOperation { get; set; }
         public string Parameters { get; set; }
 
-        public int index { get; set; }
+        public int Index { get; set; }
 
-        public string update { get; set; }
+        public string upDate { get; set; }
 
     }
 }

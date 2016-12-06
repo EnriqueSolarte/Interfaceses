@@ -19,6 +19,7 @@ namespace Interface.Pages
     public partial class Main : UserControl
     {
 
+
         public Main()
         {
             InitializeComponent();
@@ -28,6 +29,7 @@ namespace Interface.Pages
         private void buttonProfile_Click(object sender, RoutedEventArgs e)
         {
             int index = this.listViewOperations.Items.Count+1;
+
             Switcher.Switch(new Pages.Profile(this,index));
 
         }
@@ -42,8 +44,9 @@ namespace Interface.Pages
             if (remainingSpace > 0)
             {
                 (this.listViewOperations.View as GridView).Columns[0].Width = 50;
-                (this.listViewOperations.View as GridView).Columns[1].Width = 200;
-                (this.listViewOperations.View as GridView).Columns[2].Width = Math.Ceiling(remainingSpace - 50 - 200);
+                (this.listViewOperations.View as GridView).Columns[1].Width = 50;
+                (this.listViewOperations.View as GridView).Columns[2].Width = 200;
+                (this.listViewOperations.View as GridView).Columns[3].Width = Math.Ceiling(remainingSpace - 50 -50 - 215);
 
             }
         }
@@ -57,6 +60,8 @@ namespace Interface.Pages
             Switcher.Switch(new Pages.Profile(this, index));
 
         }
+
+        
     }
 }
 
