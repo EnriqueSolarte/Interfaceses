@@ -28,21 +28,9 @@ namespace Interface.Pages
             MainPage = main;
             InitializeComponent();
             profileOperation = new Operation();
-            if (index <= MainPage.listViewOperations.Items.Count)
-            {
-                var listProfileOperation = MainPage.listViewOperations.SelectedValue as List<Operation>;
-                profileOperation = listProfileOperation.Last();
-                
-            }
-            else
-            {
-                profileOperation.Index = MainPage.listViewOperations.Items.Count;
-            }
+            profileOperation = profileOperation.GetParameters(MainPage,index);
             fillingProfileParameters();
-
-        }
-
-       
+        } 
 
         private void buttonAccept_Click(object sender, RoutedEventArgs e)
         {
@@ -56,16 +44,9 @@ namespace Interface.Pages
             profileOperation.TypeOperation = "Profile";
             profileOperation.Parameters = DateTime.Now.ToString("[DD=hh][MM=mm][YY=-hh][MM=mmss]");
             profileOperation.upDate = DateTime.Now.ToString();
-
-
-            List<Operation> listOperation = new List<Operation>();
-            listOperation.Add(profileOperation);
-            if (profileOperation.Index != MainPage.listViewOperations.Items.Count)
-            {
-                MainPage.listViewOperations.Items.RemoveAt(profileOperation.Index);
-            }
-            MainPage.listViewOperations.Items.Insert(profileOperation.Index, listOperation);
-            
+         
+            MainPage.listViewOperations.Items.Insert(profileOperation.Index,
+                profileOperation.SetParameters(profileOperation, MainPage));     
         }
 
         private void buttonCancel_Click(object sender, RoutedEventArgs e)

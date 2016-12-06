@@ -29,7 +29,6 @@ namespace Interface.Pages
         private void buttonProfile_Click(object sender, RoutedEventArgs e)
         {
             int index = this.listViewOperations.Items.Count+1;
-
             Switcher.Switch(new Pages.Profile(this,index));
 
         }
