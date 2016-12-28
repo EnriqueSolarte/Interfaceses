@@ -15,33 +15,23 @@ using System.Windows.Shapes;
 
 namespace Interface
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+  
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+            Switcher.window = this;
+            Switcher.Switch(new Pages.Main());
         }
 
-
-
-
-        #region Behaibor apperance
-        private void sizeChanged(object sender, SizeChangedEventArgs e)
+        #region Switcher Tool
+        public void Navigate(UserControl nextPage)
         {
-            double remainingSpace = listViewOperations.ActualWidth;
-
-            if (remainingSpace > 0)
-            {
-                (listViewOperations.View as GridView).Columns[0].Width = 50;
-                (listViewOperations.View as GridView).Columns[1].Width = 200;
-                (listViewOperations.View as GridView).Columns[2].Width = Math.Ceiling(remainingSpace-50-200);
-                
-            }
+            this.Content = nextPage;
         }
 
         #endregion
+
     }
 }
